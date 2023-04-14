@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+:root{
+/*root representa o elemento <html> e é idêntico ao seletor html, exceto que sua especificidade é mais alta. */
+
+--text-color: #ffffff;
+--bg-url: url(./assets/background-mobile.jpg.jpg);
+--stroke-color:  rgba(255, 255, 255, 0.5);
+--surface-color:  rgba(255, 255, 255, 0.1);
+--surface-color-hover: rgba(255, 255, 255, 0.05);
+--highlight-color:  rgba(255, 255, 255, 0.2);
+--switch-bg-url: url(assets/moon-stars.svg);
+
+}
+
+.light{
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(assets/sun-light.svg);
+
+}
+
+body{
+    background: var(--bg-url) no-repeat top center/cover;
+    
+}
+body *{
+    font-family: 'Roboto Slab', serif;
+    color: var(--text-color);
+
+}
+
+
+#container{
+    width:360px;
+    margin:auto; /* AO INVÉS DE COLOCAR MARGIN LEFT AUTO E MARGIN RIGHT AUTO, FIZ OS DOIS EM UM SÓ, ASSIM FICANDO MARGIN : AUTO;  */
+    margin: 56px auto 0px; /*56 PIXELS EM CIMA, AUTOMATICO NAS LATERAIS E 0 PIXELS EM BAIXO */
+    padding: 0 24px;
+}
+
+#profile{
+    /* Pegamos o elemento pai " profile" e colocamos um text align center*/
+    text-align:center;
+    padding: 24px ; /* QUANDO COLOCAMOS SO A PROPRIEDADE PADDING, ELE ADICIONA O PIXEL PARA TODOS OS LADOS ( BAIXO, CIMA E LATERAIS */
+}
+
+#profile img{
+    padding: 8px;
+    width: 112px;
+
+}
+
+
+#switch{
+    position: relative;
+    width: 64px;
+    margin: 20px auto ;
+
+}
+
+#switch button{
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position:absolute; /*O absoluto vai ser relativo ao switch, ele vai relativizar o absoluto   */
+    left:0;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    
+
+
+}
+
+.light #switch button{   
+    right:0;
+    left: initial;
+
+}
+
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    border-radius: 9999px;
+
+
+}
+
+#instagram-link{
+    display: block; /* TRANSFOMEI O LINK EM UM BLOCO E ALINHEI COM A IMAGEM A CIMA */
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration:none;
+
+
+}
+
+/*Links */
+
+ul{ 
+    display: flex;
+    flex-direction: column;
+    list-style:none;
+    gap: 16px;
+    padding: 4px 0;
+
+}
+
+ul li a {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    text-decoration: none;
+    backdrop-filter: blur(5px);
+    transition: background 0.4s;
+
+    
+}
+
+/* pseudo-selector*/
+ul li a:hover{
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+  
+
+}
+
+#social-links{
+    display: flex;
+    justify-content: center;
+    font-size:24px;
+    padding: 24px 0;
+    
+    /*
+    justify-content: space-around;
+    margin-top: 40px;
+    font-size: 24px;*/
+}
+
+#social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: 0.5s;
+    border-radius: 50%;
+}
+
+#social-links a:hover{
+    background: var(--highlight-color);
+   
+
+}
+
+footer{
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+}
