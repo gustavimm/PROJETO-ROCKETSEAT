@@ -41,7 +41,8 @@ body *{
 
 
 #container{
-    width:360px;
+    width:100%;
+    max-width: 588px;
     margin:auto; /* AO INVÉS DE COLOCAR MARGIN LEFT AUTO E MARGIN RIGHT AUTO, FIZ OS DOIS EM UM SÓ, ASSIM FICANDO MARGIN : AUTO;  */
     margin: 56px auto 0px; /*56 PIXELS EM CIMA, AUTOMATICO NAS LATERAIS E 0 PIXELS EM BAIXO */
     padding: 0 24px;
